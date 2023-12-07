@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+  }
+  .card__actions {
+    text-align: center; 
+  }
+  
+  .card__actions a.button {
+    display: inline-block; 
+    padding: 10px 20px; 
+    background-color: #007bff; 
+    color: #fff; 
+    text-decoration: none; 
+   
+  }
+  .centered-element {
+    text-align: center;
+  }
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+   
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #104613;
+  }
+  ul li img {
+    max-width: 100px; 
+    height: auto; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease-in-out; 
+  }
+  
+ 
+  ul li img:hover {
+    transform: scale(1.1); 
+  }
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .card__image {
+    text-align: center; /* Căn giữa ảnh */
+  }
+  .card__image img {
+    width: 300px;
+    height: auto;
+  }
+
+  .card__content {
+    padding: 15px;
+  }
+
+  .product__price {
+    color: #3498db;
+  }
+
+  .product__description {
+    color: #555;
+  }
+
+  .button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: #217dbb;
+  }
+
+  .card__actions {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  ul {
+   
+    justify-content: space-around; 
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: center;*/
+  }
+
+  li {
+    
+    width: 400px;
+    margin: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #3498db;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .welcome-message {
+    text-align: center;
+    margin-bottom: 20px;
+  }

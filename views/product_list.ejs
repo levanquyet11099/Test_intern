@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Product List</h1>
+
+  <% if (user) { %>
+    <p class="welcome-message">Welcome, <%= user.username %>!</p>
+    <div class="centered-element"> <a href="/api/v1/product/add_product" class="button"  >Add Product</a></div>
+    
+    <ul>
+      <% products.forEach(product => { %>
+        <li>
+          <article class="card product-item">
+            <div class="card__image">
+              <img src="<%= product.image %>" alt="<%= product.name %>">
+            </div>
+            <div class="card__content">
+              <h2 class="product__price">Tên: <%= product.name %></h2>
+              <h2 class="product__price">Giá: <%= product.price %></h2>
+              <p class="product__description"> Mô tả: <%= product.description %></p>
+              <p class="product__image">Url:<%= product.image %></p>
+            </div>
+            <div class="card__actions">            
+              <ul> 
+                <form action="/api/v1/product/update/<%= product.id %>" method="get"> 
+                        <button type="submit" class="button">Sửa</button>
+                </form>
+                <form action="/api/v1/product/Delete/<%= product.id %>" method="post"> 
+                        <button type="submit" class="button">Xóa sản phẩm</button>
+                </form> 
+              </ul>
+            </div>
+          </article>
+        </li>
+      <% }); %>
+    </ul>
+  <% } else { %>
+    <div class="centered-element"> <a href="/login" class="button"  >Login</a></div>
+    
+    <ul>
+      <% products.forEach(product => { %>
+        <li>
+          <article class="card product-item">
+            <div class="card__image">
+              <img src="<%= product.image %>" alt="<%= product.name %>">
+            </div>
+            <div class="card__content">
+              <h2 class="product__price">Tên: <%= product.name %></h2>
+              <h2 class="product__price">Giá: Liên hệ</h2>
+              <p class="product__description"><%= product.description %></p>
+            </div>
+          </article>
+        </li>
+      <% }); %>
+    </ul>
+  <% } %>
+  <ul>
+    
+</ul>
+
+</body>
+</html>

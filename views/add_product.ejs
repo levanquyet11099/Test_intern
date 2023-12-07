@@ -1,0 +1,30 @@
+<!-- views/add-product.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm mới sản phẩm</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h2>Thêm mới sản phẩm</h2>
+
+    
+    <form action="/api/v1/product/add_product" method="post">
+        <label for="name">Tên sản phẩm:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="price">Giá:</label>
+        <input type="number" id="price" name="price" required>
+        <label for="description">Mô tả:</label>
+        <textarea id="description" name="description" required></textarea>
+        <label for="image">Url Hình ảnh:</label>
+        <input type="text" id="image" name="image" required>
+       <!-- <input type="file" id="image" name="image" accept="image/*" required> -->
+        <button type="submit">Thêm mới sản phẩm</button>
+    </form>
+
+    
+</body>
+</html>
