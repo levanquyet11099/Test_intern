@@ -8,6 +8,8 @@
 </head>
 <body>
   <h1>Register</h1>
+  
+
   <form action="/register" method="post">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required>
@@ -18,7 +20,27 @@
     <label for="confirmPassword">Confirm Password:</label>
     <input type="password" id="confirmPassword" name="confirmPassword" required>
     <br>
-    <button type="submit">Register</button>
+    <button type="submit" id="registerButton">Register</button>
   </form>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        const registerButton = document.getElementById('registerButton');
+
+        confirmPasswordInput.addEventListener('input', function() {
+            const password = passwordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+
+            if (password === confirmPassword) {
+                // Hai mật khẩu trùng khớp, cho phép đăng ký
+                registerButton.disabled = false;
+            } else {
+                // Hai mật khẩu không trùng khớp, không cho phép đăng ký
+                registerButton.disabled = true;
+            }
+        });
+    });
+</script>
 </body>
 </html>
