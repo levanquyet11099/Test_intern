@@ -9,7 +9,17 @@
   <% if (user) { %>
     <p class="welcome-message">Welcome, <%= user.username %>!</p>
     <div class="centered-element"> <a href="/api/v1/product/add_product" class="button"  >Add Product</a></div>
-    
+    <br></br>
+    <form class="right-align" action="/logout" method="get"> 
+      <button type="submit" class="button">Logout</button>
+    </form>
+    <div class="centered-element"> 
+      <form action="/api/v1/product/searchproduct" method="post"> 
+        <input type="text" id="searchproduct" name="searchproduct" placeholder="Tìm sản phẩm ...">
+        <button type="submit" class="button">Search Product</button>
+      </form>
+      
+    </div>
     <ul>
       <% products.forEach(product => { %>
         <li>

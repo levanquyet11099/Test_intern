@@ -1,23 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productctrl');
-const authController = require('../controllers/authController');
+const authenticateToken = require('../Middleware/authtoken');
 
-router.get('/api/v1/product/list', productController.getProductList);
+router.use('/', authenticateToken);
 
-router.get('/api/v1/product/update/:id', productController.geteditProduct);
-router.post('/api/v1/product/update', productController.updateProduct);
+router.get('/list',productController.getProductList);
+router.post('/searchproduct',productController.getSeacrhProduct);
 
-router.get('/api/v1/product/add_product', productController.getAddProduct);
-router.post('/api/v1/product/add_product', productController.addProduct);
+router.get('/update/:id', productController.geteditProduct);
+router.post('/update', productController.updateProduct);
 
-router.post('/api/v1/product/Delete/:productId', productController.deleteProduct);
+router.get('/add_product', productController.getAddProduct);
+router.post('/add_product', productController.addProduct);
 
-
-router.get('/login', authController.getlogin);
-router.get('/register', authController.getregister);  
-
-router.post('/login', authController.login);
-router.post('/register', authController.register);
+router.post('/Delete/:productId', productController.deleteProduct);
 
 module.exports = router;

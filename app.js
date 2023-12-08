@@ -2,13 +2,16 @@ const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const router = require('./routes/product');
+const routerlogin = require('./routes/login');
+const routerproduct = require('./routes/product');
 const session = require('express-session');
+const flash = require('express-flash');
 
 const app = express();
 
+
 app.use(session({
-  secret: 'your-secret-key',
+  secret: '110901',
   resave: true,
   saveUninitialized: true
 }));
@@ -18,6 +21,13 @@ app.use((req, res, next) => {
     }
     next();
   });
+
+app.use(flash());
+app.use((req, res, next) => {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  next();
+});
 
 app.set('view engine', 'ejs');
 app.set('views','views');
@@ -31,7 +41,8 @@ mongoose.connect('mongodb+srv://quyet1911:htHx2yRmV6g7d9ZL@cluster0.e1wg4.mongod
   useUnifiedTopology: true,
 });
 
-app.use('/', router);
+app.use(routerlogin);
+app.use('/api/v1/product',routerproduct)
 app.listen(3000);
 
 
